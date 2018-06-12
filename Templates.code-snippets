@@ -197,8 +197,8 @@
             "   $$mydate = Get-Date",
             "   Add-content $$Logfile -value '$$mydate; $$ProcessError'",
             "   $$ProcessError = $null",
-            "   $$err = 'true'"      
-            "}",
+            "   $$err = 'true'",      
+            "}"
         ],
         "description": "Error Process and write error to log file"
     },        
