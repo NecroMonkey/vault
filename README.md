@@ -4,4 +4,10 @@ I am a ConfigMan engineer and this is where I will be keeping my scripts, SQL qu
 
 # Contents
 
-Templates.code-snippets - The code snippets I use in VSCode
+## ./
+**Templates.code-snippets** - The code snippets I use in VSCode
+
+## ./SSRS-Reports/ComplianceSettings-OverallStatusReports/
+**Compliance Settings - Overall Status for a System** - Third level report that gives baseline and configuration item compliance for a sigle system. Baseline links back to *Compliance Settings - Overall Status of Baseline* and individual CIs link to *Compliance Settings - Overall Status of Configuration Item*
+**Compliance Settings - Overall Status of Baseline** - Top level report that gives overall compliance of a ConfigMan baseline. Individual CIs link to *Compliance Settings - Overall Status of Configuration Item*
+**Compliance Settings - Overall Status of Configuration Item** - Second level report that gives compliance of configuration item within a baseline.  Baseline links back to *Compliance Settings - Overall Status of Baseline* and individual system links to *Compliance Settings - Overall Status for a System*
