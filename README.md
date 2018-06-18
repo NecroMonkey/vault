@@ -16,6 +16,8 @@ I am a ConfigMan engineer and this is where I will be keeping my scripts, SQL qu
 
 **check-for-KB.ps1** - Checks for installed KB and retuens dated installed
 
+**check-pending-reboot.ps1** - Checks system for pending reboot
+
 **check-services-start-type.ps1** - Checks the startup type of a service
 
 **check-services-status.ps1** - Checks the status of a service
