@@ -22,6 +22,8 @@ I am a ConfigMan engineer and this is where I will be keeping my scripts, SQL qu
 
 **check-services-status.ps1** - Checks the status of a service
 
+**Toggle-BITS-Settings.ps1** - Based on parameters, turn BITS on or off
+
 ### ./SSRS-Reports/ComplianceSettings-OverallStatusReports/
 
 **Compliance Settings - Overall Status for a System.rdl** - Third level report that gives baseline and configuration item compliance for a sigle system. Baseline links back to *Compliance Settings - Overall Status of Baseline* and individual CIs link to *Compliance Settings - Overall Status of Configuration Item*
