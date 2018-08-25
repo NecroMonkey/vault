@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-The script takes an input CSV file of IPSUbnet boundaries and loops through it to create a new IPRange boundaries.
+The script takes an input CSV file of IPSUbnet boundaries and loops through it to create a new IPRange boundaries
 
 .SYNTAX
 Script syntax
