@@ -24,6 +24,12 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 **Toggle-BITS-Settings.ps1** - Based on parameters, turn BITS on or off
 
+### ./ConfigMgr-Scripts
+
+**Switch-IPSubnet-to-IPRange-Boundaries.ps1** - Uses CSV file to create new IPRange boundaries based off exit IPSubnet boundaries and removes old IPSUbnet boundaries
+
+**Switch-IPSubnet-to-IPRange-Boundaries.sql** - SQL query that can be sed with Switch-IPSubnet-to-IPRange-Boundaries.ps1 to create required input CSV file
+
 ### ./SSRS-Reports/ComplianceSettings-OverallStatusReports/
 
 **Compliance Settings - Overall Status for a System.rdl** - Third level report that gives baseline and configuration item compliance for a sigle system. Baseline links back to *Compliance Settings - Overall Status of Baseline* and individual CIs link to *Compliance Settings - Overall Status of Configuration Item*
