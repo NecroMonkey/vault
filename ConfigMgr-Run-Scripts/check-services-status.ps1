@@ -5,7 +5,7 @@ Checks the status of a specified service
 .DESCRIPTION
 
 .PARAMETER servicename
-Name of teh service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
 
 .INPUTS
 
