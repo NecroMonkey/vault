@@ -1,22 +1,37 @@
 <#
 .SYNOPSIS
-The script takes an input CSV file of IPSUbnet boundaries and loops through it to create a new IPRange boundaries
+The script takes an input CSV file of IPSUbnet boundaries and loops through it to create new IPRange boundaries
 
 .SYNTAX
-Script syntax
+Switch-IPSubnet-to-IPRange-Boundaries.ps1 -inputfile file.csv -sc sitecode: <-del y>
 
 .DESCRIPTION
-The script takes an input CSV file and loops through it to create a new IP range based ConfigMgr boundary, add it to 
+The script takes an input CSV file and loops through it to create new IP range based ConfigMgr boundaries off IP subnt boundaries in the file, add it to desired boundary groups, and delete the old IPSubnet boundary.
 
-.PARAMETER servicename
+
+.PARAMETER DisplayName
+Name to be given to the new boundary created
+
+.PARAMETER id
+Boundary ID of the IPSubnet boundary being replaced by the new IPRange boundary
+
+.PARAMETER range
 Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
 
+.PARAMETER bgid
+Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+
+.PARAMETER del
+Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+
+.PARAMETER sc
+Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+
+.PARAMETER InputFile
+Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
 
 .INPUTS
-Input description if used
-
-.OUTPUTS
-Output description if used
+CSV  file with the following column header names: displayname, id, range, and bgid.  This is the input for the matching parameters. Each boundary group add does require a separate line 
 
 .NOTES
 FileName: Switch-IPSubnet-to-IPRange-Boundaries.ps1
@@ -27,7 +42,7 @@ Modified:
 Version: 1.0.0
 
 .EXAMPLE
-Example description and example
+.\recreateranges.ps1 -InputFile .\InputFile.csv -del y  -sc sms:
 
 #>
 
@@ -52,7 +67,7 @@ param(
 
 #-----Initializations and Module Imports-----
 
-#Get SCCM Console Install Path to locate PS Module.
+#Get ConfigMgr Console Install Path to locate PS Module.
 
 If (Test-Path "C:\Program Files\Microsoft Configuration Manager\AdminConsole\bin\ConfigurationManager.psd1")
 {
@@ -79,25 +94,24 @@ Else {
 
 $List = Import-Csv -Path $InputFile
 
-#-----Functions-----
-
-#-----Logging-----
-
 #-----Execution-----
 
-#Change to SCCM PSDrive
+#Change to ConfigMgr PSDrive
 Set-Location $sc
 
+#Create IPRange boundaries
 Foreach ($item in $List)
 {
     New-CMBoundary -DisplayName $item.DisplayName -BoundaryType IPRange -Value $item.range
 }
 
+#Add new boundary to boundary groups
 Foreach ($item in $List)
 {
     Add-CMBoundaryToGroup -BoundaryGroupID $item.bgid -BoundaryName $item.Displayname
 }
 
+#Delete old IPSubnet boundary if desired
 if ($del -eq 'y')
 {
     Foreach ($item in $List)
