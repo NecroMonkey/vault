@@ -8,7 +8,6 @@ Switch-IPSubnet-to-IPRange-Boundaries.ps1 -inputfile file.csv -sc sitecode: <-de
 .DESCRIPTION
 The script takes an input CSV file and loops through it to create new IP range based ConfigMgr boundaries off IP subnt boundaries in the file, add it to desired boundary groups, and delete the old IPSubnet boundary.
 
-
 .PARAMETER DisplayName
 Name to be given to the new boundary created
 
@@ -16,22 +15,22 @@ Name to be given to the new boundary created
 Boundary ID of the IPSubnet boundary being replaced by the new IPRange boundary
 
 .PARAMETER range
-Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+IP Range to be used in creating the IPRange boundary.  x.x.x.x-x.x.x.x format
 
 .PARAMETER bgid
-Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+Boundary Group ID that the new boundary will be added 
 
 .PARAMETER del
-Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+Optional parameter to automatically remove the old IPSubnet boundary.  Suggest not using and verify new boundarie and manually delete old.  Only accepted pararmeter is y
 
 .PARAMETER sc
-Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+ConfigMgr site code.  FOrmat is site code followed by :
 
 .PARAMETER InputFile
-Name of the service to check.  This is the service name and not the display name.  For example, Windows Event Log service would be eventlog
+Path and name of input CSV file
 
 .INPUTS
-CSV  file with the following column header names: displayname, id, range, and bgid.  This is the input for the matching parameters. Each boundary group add does require a separate line 
+CSV file with the following column header names: displayname, id, range, and bgid.  This is the input for the matching parameters. Each boundary group add does require a separate line 
 
 .NOTES
 FileName: Switch-IPSubnet-to-IPRange-Boundaries.ps1
