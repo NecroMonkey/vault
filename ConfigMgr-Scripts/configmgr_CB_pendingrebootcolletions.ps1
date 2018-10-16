@@ -58,6 +58,16 @@ Else {
 #Change to ConfigMgr PSDrive
 Set-Location $sc
 
+# Client State Not 0 - Systems Pending Reboot
+    $limiter1 = 'SMS00001'
+    $collectionname = 'Systems Pending Reboot'
+    $rulevariable = 'select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System join sms_combineddeviceresources comb on comb.resourceid = sms_r_system.resourceid where comb.clientstate <> 0'
+    $recurint = 'Days'
+    $recurct = '1'
+    $schedule = New-CMSchedule -RecurInterval $recurint -RecurCount $recurct
+    New-CMDeviceCollection -LimitingCollectionId $limiter1 -Name $collectionname -RefreshSchedule $schedule
+    Add-CMDeviceCollectionQueryMembershipRule -CollectionName $collectionname  -RuleName Rule -QueryExpression $rulevariable
+
 # Client State 1 - Configuration Manager
     $limiter1 = 'SMS00001'
     $collectionname = 'Systems Pending Reboot with Client State 1 - Configuration Manager'
