@@ -30,6 +30,8 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 **Switch-IPSubnet-to-IPRange-Boundaries.sql** - SQL query that can be sed with Switch-IPSubnet-to-IPRange-Boundaries.ps1 to create required input CSV file
 
+**configmgr_CB_pendingrebootcolletions.ps1** - Script that building out ConfigMgr colections based off pending reboot reasons reported in the ConfigMgr console
+
 ### ./SSRS-Reports/ComplianceSettings-OverallStatusReports/
 
 **Compliance Settings - Overall Status for a System.rdl** - Third level report that gives baseline and configuration item compliance for a sigle system. Baseline links back to *Compliance Settings - Overall Status of Baseline* and individual CIs link to *Compliance Settings - Overall Status of Configuration Item*
@@ -37,3 +39,9 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 **Compliance Settings - Overall Status of Baseline.rdl** - Top level report that gives overall compliance of a ConfigMgr baseline. Individual CIs link to *Compliance Settings - Overall Status of Configuration Item*
 
 **Compliance Settings - Overall Status of Configuration Item.rdl** - Second level report that gives compliance of configuration item within a baseline.  Baseline links back to *Compliance Settings - Overall Status of Baseline* and individual system links to *Compliance Settings - Overall Status for a System*
+
+### ./SQL
+
+**client_boundary_membership.sql** - SQL quesry that returns ConfigMgr ResourceID and associated BoundaryID into a custom table
+
+**configmgr_systems_pending_reboot.sql** -  SQL queries that return systems pending reboot and assocaited reason and a count of pending reboot systems by reason
