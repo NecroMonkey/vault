@@ -40,6 +40,10 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 **Compliance Settings - Overall Status of Configuration Item.rdl** - Second level report that gives compliance of configuration item within a baseline.  Baseline links back to *Compliance Settings - Overall Status of Baseline* and individual system links to *Compliance Settings - Overall Status for a System*
 
+### ./SSRS-Reports/ContentSourceBreakdown/
+
+**Content Source Breakdown.rdl** - Report showing a breakdown of ConfigMGr content source types (DP, Cloud DP, BranchCache, and PeerCache)
+
 ### ./SQL
 
 **client_boundary_membership.sql** - SQL quesry that returns ConfigMgr ResourceID and associated BoundaryID into a custom table
