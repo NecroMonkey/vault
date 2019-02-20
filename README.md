@@ -1,6 +1,6 @@
 # ReadMe
 
-I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL queries, SSRS reports, and other things in the hopes that they will benefit the community.
+I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL queries, SSRS reports, and other things in the hopes that they will benefit the community.  If you have questions or come across an issue, please reach out to me. 
 
 ## Contents
 
