@@ -22,6 +22,8 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 **check-services-status.ps1** - Checks the status of a service
 
+**log_collector.ps1** - ConofigMgr run script that grabs CCMSETUP, CCM, Windows Update, and ny addition logs you may add from a system and copied to a share
+
 **Toggle-BITS-Settings.ps1** - Based on parameters, turn BITS on or off
 
 ### ./ConfigMgr-Scripts
