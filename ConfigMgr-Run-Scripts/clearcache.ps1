@@ -14,7 +14,7 @@ clearcache.ps1
 .NOTES
 FileName: clearcache.ps1
 Author: Michael Schultz
-Contact: 
+Contact: monkey@necro-monkey.com
 Created: 20190227
 Modified: 
 Version: 1
@@ -44,7 +44,7 @@ Param (
 $UIResourceMgr = New-Object -ComObject UIResource.UIResourceMgr
 $Cache = $UIResourceMgr.GetCacheInfo()
 #Enum Cache elements, compare date, and delete them
-$Cache.GetCacheElements()  | foreach {$Cache.DeleteCacheElement($_.CacheElementID)}
+$Cache.GetCacheElements()  | ForEach-Object {$Cache.DeleteCacheElement($_.CacheElementID)}
 
 #clear BranchCache - Remove first '#' below to turn of BrnachCache flush.  Add back to turn back on
 #<#

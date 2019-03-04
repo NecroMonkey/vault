@@ -22,9 +22,11 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 **check-services-status.ps1** - Checks the status of a service
 
-**clearcache.ps1** - ConofigMgr run script that clears the CCM cache and BranchCache cache
+**clearcache.ps1** - ConfigMgr run script that clears the CCM cache and BranchCache cache
 
-**log_collector.ps1** - ConofigMgr run script that grabs CCMSETUP, CCM, Windows Update, and ny addition logs you may add from a system and copied to a share
+**log_collector.ps1** - ConfigMgr run script that grabs CCMSETUP, CCM, Windows Update, and ny addition logs you may add from a system and copied to a share
+
+**set-service-state.ps1** - ConfigMgr run script that sets the startup type (Automatic, Manual, Disabled) and status (Running, Stopped, Paused) of a specified service
 
 **Toggle-BITS-Settings.ps1** - Based on parameters, turn BITS on or off
 
