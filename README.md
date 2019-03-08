@@ -32,11 +32,13 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 ### ./ConfigMgr-Scripts
 
+**configmgr_CB_pendingrebootcolletions.ps1** - Script that building out ConfigMgr colections based off pending reboot reasons reported in the ConfigMgr console
+
+**create_CI_compliance_collections.ps1** - This script creates Compliant, Non-Compliant, and Failure collections for Copliance Settings Configuration Items
+
 **Switch-IPSubnet-to-IPRange-Boundaries.ps1** - Uses CSV file to create new IPRange boundaries based off exit IPSubnet boundaries and removes old IPSUbnet boundaries
 
 **Switch-IPSubnet-to-IPRange-Boundaries.sql** - SQL query that can be sed with Switch-IPSubnet-to-IPRange-Boundaries.ps1 to create required input CSV file
-
-**configmgr_CB_pendingrebootcolletions.ps1** - Script that building out ConfigMgr colections based off pending reboot reasons reported in the ConfigMgr console
 
 ### ./SSRS-Reports/ComplianceSettings-OverallStatusReports/
 
