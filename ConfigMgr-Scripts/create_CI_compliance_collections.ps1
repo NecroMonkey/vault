@@ -96,21 +96,21 @@ Foreach ($LocalizedDisplayName in $cis)
 
     $CollectionExist = Get-CMDeviceCollection -Name $collcompliant
     If(!($CollectionExist)) {
-        $rulevariablecomp = 'select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ResourceID in (select SMS_CI_COMP.ResourceID from SMS_CI_CurrentComplianceStatus as SMS_CI_COMP inner join SMS_ConfigurationItem as SMS_CI on SMS_CI.ci_id=SMS_CI_COMP.ci_id where ((SMS_CI_COMP.DisplayName = "' + $cildname + '" and SMS_CI.islatest = 1  and SMS_CI_COMP.ComplianceState != 1) and SMS_CI_COMP.LastComplianceMessageTime >= Dateadd(dd,-7,GETDATE())))'
+        $rulevariablecomp = 'select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ResourceID in (select SMS_CI_COMP.ResourceID from SMS_CI_CurrentComplianceStatus as SMS_CI_COMP inner join SMS_ConfigurationItem as SMS_CI on SMS_CI.ci_id=SMS_CI_COMP.ci_id where ((SMS_CI_COMP.DisplayName = "' + $cildname + '" and SMS_CI.islatest = 1  and SMS_CI_COMP.ComplianceState = 1) and SMS_CI_COMP.LastComplianceMessageTime >= Dateadd(dd,-7,GETDATE())))'
         New-CMDeviceCollection -LimitingCollectionId $limiter -Name $collcompliant -RefreshSchedule $schedule
         Add-CMDeviceCollectionQueryMembershipRule -CollectionName $collcompliant  -RuleName Rule -QueryExpression $rulevariablecomp
     }
 
     $CollectionExist = Get-CMDeviceCollection -Name $collnoncompliant
     If(!($CollectionExist)) {
-        $rulevariablenon = 'select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ResourceID in (select SMS_CI_COMP.ResourceID from SMS_CI_CurrentComplianceStatus as SMS_CI_COMP inner join SMS_ConfigurationItem as SMS_CI on SMS_CI.ci_id=SMS_CI_COMP.ci_id where ((SMS_CI_COMP.DisplayName = "' + $cildname + '" and SMS_CI.islatest = 1  and SMS_CI_COMP.ComplianceState != 1) and SMS_CI_COMP.LastComplianceMessageTime >= Dateadd(dd,-7,GETDATE())))'
+        $rulevariablenon = 'select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ResourceID in (select SMS_CI_COMP.ResourceID from SMS_CI_CurrentComplianceStatus as SMS_CI_COMP inner join SMS_ConfigurationItem as SMS_CI on SMS_CI.ci_id=SMS_CI_COMP.ci_id where ((SMS_CI_COMP.DisplayName = "' + $cildname + '" and SMS_CI.islatest = 1  and SMS_CI_COMP.ComplianceState = 2) and SMS_CI_COMP.LastComplianceMessageTime >= Dateadd(dd,-7,GETDATE())))'
         New-CMDeviceCollection -LimitingCollectionId $limiter -Name $collnoncompliant -RefreshSchedule $schedule
         Add-CMDeviceCollectionQueryMembershipRule -CollectionName $collnoncompliant  -RuleName Rule -QueryExpression $rulevariablenon
     }
 
     $CollectionExist = Get-CMDeviceCollection -Name $collerror
     If(!($CollectionExist)) {
-        $rulevariableer = 'select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ResourceID in (select SMS_CI_COMP.ResourceID from SMS_CI_CurrentComplianceStatus as SMS_CI_COMP inner join SMS_ConfigurationItem as SMS_CI on SMS_CI.ci_id=SMS_CI_COMP.ci_id where ((SMS_CI_COMP.DisplayName = "' + $cildname + '" and SMS_CI.islatest = 1  and SMS_CI_COMP.ComplianceState != 1) and SMS_CI_COMP.LastComplianceMessageTime >= Dateadd(dd,-7,GETDATE())))'
+        $rulevariableer = 'select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.ResourceID in (select SMS_CI_COMP.ResourceID from SMS_CI_CurrentComplianceStatus as SMS_CI_COMP inner join SMS_ConfigurationItem as SMS_CI on SMS_CI.ci_id=SMS_CI_COMP.ci_id where ((SMS_CI_COMP.DisplayName = "' + $cildname + '" and SMS_CI.islatest = 1  and SMS_CI_COMP.ComplianceState = 4) and SMS_CI_COMP.LastComplianceMessageTime >= Dateadd(dd,-7,GETDATE())))'
         New-CMDeviceCollection -LimitingCollectionId $limiter -Name $collerror -RefreshSchedule $schedule
         Add-CMDeviceCollectionQueryMembershipRule -CollectionName $collerror  -RuleName Rule -QueryExpression $rulevariableer
     }
