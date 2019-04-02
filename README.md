@@ -24,6 +24,8 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 **clearcache.ps1** - ConfigMgr run script that clears the CCM cache and BranchCache cache
 
+**kickoff-compliance-baseline-check.ps1** - ConfigMgr run script to evaluate a compliance setting baseline compliance based off the specified name of the baseline 
+
 **log_collector.ps1** - ConfigMgr run script that grabs CCMSETUP, CCM, Windows Update, and ny addition logs you may add from a system and copied to a share
 
 **set-service-state.ps1** - ConfigMgr run script that sets the startup type (Automatic, Manual, Disabled) and status (Running, Stopped, Paused) of a specified service
