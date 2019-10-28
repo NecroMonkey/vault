@@ -27,7 +27,8 @@ WHEN 2 THEN 'Management Point'
 WHEN 3 THEN 'Peer Cache'
 WHEN 4 THEN 'DP (Distribution Point)'
 WHEN 5 THEN 'BranchCache'
-WHEN 7 THEN 'Delivery Optimization'
+WHEN 6 THEN 'Delivery Optimization Peer'
+WHEN 7 THEN 'Delivery Optimization Cache Server'
 WHEN 8 THEN 'Microsoft Update'
 END,
 packages.Name as [Content],
@@ -47,7 +48,7 @@ group by rsys.Name0, rsys.ResourceID, cdhs.DistributionPointType, packages.Name,
 order by rsys.Name0, rsys.ResourceID, cdhs.DistributionPointType, packages.Name, cdhs.ContentID
 
 select
-t1.Name0, t1.Boundary, t1.Value, t2.[Content Source Type], t2.Content, t2.GB, '1IS' as [Site]
+t1.Name0, t1.Boundary, t1.Value, t2.[Content Source Type], t2.Content, t2.GB
 from ##temp1 as t1 join
 ##temp2 as t2 on t1.ResourceID = t2.ResourceID
 
