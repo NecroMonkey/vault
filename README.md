@@ -62,4 +62,5 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 **ConfigMgr_content_source_breakdown.sql** -  SQL queries that return systems, their boundary info, and what content they have downloaded and from where
 
-**client_boundary_membership_update.sql** -  SQL quesry that returns ConfigMgr system and associated Boundary and Boundary Groups
+**client_boundary_membership_update.sql** -  SQL quesry that returns ConfigMgr system and associated Boundary and Boundary Groups 
+
