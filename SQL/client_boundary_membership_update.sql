@@ -16,4 +16,3 @@ FROM     v_R_System AS sysr INNER JOIN
 GROUP BY sysr.Netbios_Name0, ipr.Name, ipr.BoundaryType, bg.Name
 ORDER BY sysr.Netbios_Name0, ipr.Name, bg.Name
 
-
