@@ -30,7 +30,7 @@ Modified:
 Version: 1
 
 .EXAMPLE
-create_CI_compliance_collections.ps1 -sc BOB -limiter SMS00001 -ciname *bob*
+create_CI_compliance_collections.ps1 -sc BOB: -limiter SMS00001 -ciname *bob*
 
 #>
 

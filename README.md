@@ -38,6 +38,8 @@ I am a ConfigMgr engineer and this is where I will be keeping my scripts, SQL qu
 
 **create_CI_compliance_collections.ps1** - This script creates Compliant, Non-Compliant, and Failure collections for Copliance Settings Configuration Items
 
+**Create_Collection_From_BoundaryGroups.ps1** - This scripts creates collections based off existing boundary groups in ConfigMgr build 2002 and higher
+
 **Switch-IPSubnet-to-IPRange-Boundaries.ps1** - Uses CSV file to create new IPRange boundaries based off exit IPSubnet boundaries and removes old IPSUbnet boundaries
 
 **Switch-IPSubnet-to-IPRange-Boundaries.sql** - SQL query that can be sed with Switch-IPSubnet-to-IPRange-Boundaries.ps1 to create required input CSV file
